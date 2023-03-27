@@ -1,0 +1,9 @@
+# Set VARIABLEs here to allow variation in your plugin
+# See https://cosmosc2.com/docs/v5/plugins for more information
+VARIABLE simple_tcp_target_name SIMPLE_TCP
+
+# Modify this according to your actual target connection
+# See https://cosmosc2.com/docs/v5/interfaces for more information
+TARGET SIMPLE_TCP <%= simple_tcp_target_name %>
+INTERFACE <%= simple_tcp_target_name %>_INT tcpip_client_interface.rb host.docker.internal 8002 8002 10.0 nil LENGTH 0 8 0 1
+  MAP_TARGET <%= simple_tcp_target_name %>
